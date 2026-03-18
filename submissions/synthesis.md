@@ -1,6 +1,6 @@
 # Shadow Treasury Desk
 
-- **Repo:** TODO_GITHUB_URL/Synthesis-Venice-PrivateAgents
+- **Repo:** https://github.com/CrystallineButterfly/Synthesis-Venice-PrivateAgents
 - **Primary track:** Venice Private Agents
 - **Overlap targets:** SelfProtocol, Lido stETH Treasury, Uniswap Agentic Finance, ENS, Octant, MetaMask Delegations
 - **Primary contract:** PrivateDecisionRegistry
