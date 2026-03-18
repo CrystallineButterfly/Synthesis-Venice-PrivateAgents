@@ -1,9 +1,13 @@
+
 [project]
 name = "synthesis_venice_privateagents"
 version = "0.1.0"
 description = "A private reasoning desk that keeps sensitive treasury, governance, and grant analysis off public rails while still producing verifiable downstream actions."
 readme = "README.md"
 requires-python = ">=3.13"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
 
 [tool.ruff]
 line-length = 100

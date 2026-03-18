@@ -1,117 +1,91 @@
 # Shadow Treasury Desk
 
-        **Repo:** `Synthesis-Venice-PrivateAgents`  
-        **Primary track:** Venice Private Agents  
-        **Submission hold:** wait for human approval before registration or live submission.
+- **Repo:** `Synthesis-Venice-PrivateAgents`
+- **Primary track:** Venice Private Agents
+- **Category:** privacy
+- **Submission status:** implementation ready, waiting for credentials and TxIDs.
 
-        A private reasoning desk that keeps sensitive treasury, governance, and grant analysis off public rails while still producing verifiable downstream actions.
+A private reasoning desk that keeps sensitive treasury, governance, and grant analysis off public rails while still producing verifiable downstream actions.
 
-        ## Selected concept
+## Selected concept
 
-        Sensitive inputs are routed through a private-analysis module, while only redacted decisions, hashes, and consequence proofs reach public logs. A policy contract binds each private recommendation to a permitted action envelope so the repo stays privacy-first and auditable.
+Sensitive inputs are routed through a private-analysis module, while only redacted decisions, hashes, and consequence proofs reach public logs. A policy contract binds each private recommendation to a permitted action envelope so the repo stays privacy-first and auditable.
 
-        ## Idea set
+## Idea shortlist
 
-        1. Confidential Treasury Copilot
+1. Confidential Treasury Copilot
 2. Private Risk Desk
 3. Private Octant Grant Scorer
 
-        ## Prize overlap targets
+## Partners covered
 
-        - SelfProtocol
-- Lido stETH Treasury
-- Uniswap Agentic Finance
-- ENS
-- Octant
-- MetaMask Delegations
+Venice, SelfProtocol, Lido, Uniswap, ENS, Octant, MetaMask Delegations
 
-        ## Architecture
+## Architecture
 
-        ```mermaid
-        flowchart TD
-    Signals[Venice Private Agents signals] --> Discover[Discover]
-    Discover --> Plan[Plan bounded action]
-    Plan --> DryRun[Dry run + policy check]
-    DryRun --> Guard[PrivateDecisionRegistry]
-    Guard --> Execute[Execute when live mode is enabled]
-    Execute --> Verify[Verify proofs + receipts]
-    Verify --> Persist[Write agent_log.json + submission snippet]
-    Persist --> Storage[Store proof plan for Filecoin / receipts]
-        ```
+```mermaid
+flowchart TD
+    Signals[Discover signals]
+    Planner[Agent runtime]
+    DryRun[Dry-run artifact]
+    Contract[PrivateDecisionRegistry policy contract]
+    Verify[Verify and render submission]
+    Signals --> Planner --> DryRun --> Contract --> Verify
+    Contract --> venice[Venice]
+    Contract --> selfprotocol[SelfProtocol]
+    Contract --> lido[Lido]
+    Contract --> uniswap[Uniswap]
+    Contract --> ens[ENS]
+    Contract --> octant[Octant]
+```
 
-        ## Repo structure
+## Repository layout
 
-        ```text
-        Synthesis-Venice-PrivateAgents/
-├── README.md
-├── LICENSE
-├── .env.example
-├── .gitignore
-├── agent.json
-├── agent_log.json
-├── pyproject.toml
-├── Makefile
-├── docs/
-│   ├── architecture.mmd
-│   ├── demo_video_script.md
-│   └── security.md
-├── src/
-│   └── PrivateDecisionRegistry.sol
-├── script/
-│   └── Deploy.s.sol
-├── agents/
-│   ├── __init__.py
-│   └── venice_private_desk.py
-├── scripts/
-│   ├── run_agent.py
-│   └── plan_live_demo.py
-├── submissions/
-│   └── synthesis.md
-└── tests/
-    └── test_project_context.py
-        ```
+- `src/`: shared policy contracts plus the repo-specific wrapper contract.
+- `script/`: Foundry deployment entrypoint.
+- `agents/`: Python runtime, partner adapters, and project metadata.
+- `scripts/`: CLI utilities for running the loop and rendering submissions.
+- `docs/`: architecture, credentials, demo script, and security notes.
+- `submissions/`: generated `synthesis.md` snippet for this repo.
 
-        ## Tech stack
+## Action catalog
 
-        Solidity 0.8.24 skeleton, Python 3.13 standard library, JSON manifests, Foundry-style layout, MIT license
+| Action | Partner | Purpose | Max USD | Sensitivity |
+| --- | --- | --- | --- | --- |
+| `venice_private_analysis` | Venice | Use Venice for a bounded action in this repo. | $5 | high |
+| `selfprotocol_zk_verify` | SelfProtocol | Use SelfProtocol for a bounded action in this repo. | $3 | high |
+| `lido_yield_route` | Lido | Use Lido for a bounded action in this repo. | $200 | medium |
+| `uniswap_quote_route` | Uniswap | Use Uniswap for a bounded action in this repo. | $220 | medium |
+| `ens_ens_publish` | ENS | Use ENS for a bounded action in this repo. | $5 | low |
+| `octant_signal_publish` | Octant | Use Octant for a bounded action in this repo. | $25 | medium |
+| `metamask_delegations_delegate_scope` | MetaMask Delegations | Use MetaMask Delegations for a bounded action in this repo. | $2 | high |
 
-        ## Security guardrails
+## Commands
 
-        - principal and spend policies are separated by design
-        - whitelist, cap, and cooldown checks gate every action
-        - dry-run hashes are recorded before any live execution path
-        - compute budgets are explicit and live mode is opt-in
-        - secrets are loaded from environment variables only
-        - structured logs are appended for every discover-plan-execute-verify step
+```bash
+python3 -m unittest discover -s tests
+forge test
+python3 scripts/run_agent.py
+python3 scripts/plan_live_demo.py
+python3 scripts/render_submission.py
+```
 
-        ## Autonomy loop
+## Credentials
 
-        1. Discover candidate signals and external state.
-2. Plan an action bundle with explicit budget, target, and purpose.
-3. Run a dry-run check and policy validation before any execution path.
-4. Execute only when live mode, wallets, and credentials are supplied.
-5. Verify receipts, proofs, and notes, then append structured logs.
+| Partner | Variables | Docs |
+| --- | --- | --- |
+| Venice | VENICE_API_KEY, VENICE_CHAT_COMPLETIONS_URL, VENICE_MODEL | https://docs.venice.ai/ |
+| SelfProtocol | SELF_PROTOCOL_API_KEY, SELF_VERIFICATION_URL | https://docs.self.xyz/ |
+| Lido | RPC_URL | https://docs.lido.fi/ |
+| Uniswap | UNISWAP_API_KEY, UNISWAP_QUOTE_URL | https://developers.uniswap.org/ |
+| ENS | ENS_NAME | https://docs.ens.domains/ |
+| Octant | OCTANT_SIGNAL_URL | https://octant.app/ |
+| MetaMask Delegations | RPC_URL | https://docs.metamask.io/delegation-toolkit/ |
 
-        ## Local MVP status
+## Live demo plan
 
-        - [x] README, manifests, and security notes created
-        - [x] contract and agent-loop skeletons created
-        - [x] local git repository initialized with an initial commit
-        - [ ] operator wallet addresses attached
-        - [ ] real API keys added through `.env`
-        - [ ] live TxIDs recorded
-        - [ ] registration and submission executed
-
-        ## Live demo and TxID plan
-
-        1. load real credentials into `.env`
-        2. run `python3 scripts/plan_live_demo.py` to print the checklist
-        3. replace placeholder wallet fields in `agent.json`
-        4. enable `LIVE_MODE=true` for controlled execution
-        5. record resulting TxIDs and paste them into `submissions/synthesis.md`
-
-        ## Why this ranks first
-
-        This concept ranks highest because it overlaps SelfProtocol, Lido stETH Treasury, Uniswap Agentic Finance while keeping the
-        execution envelope explicit, dry-run-first, and honest about what still needs
-        real credentials before anything touches a chain.
+1. Copy .env.example to .env and fill the required keys.
+2. Deploy the contract with forge script script/Deploy.s.sol --broadcast for PrivateDecisionRegistry.
+3. Run python3 scripts/run_agent.py to produce a dry run for venice_private_desk.
+4. Set LIVE_MODE=true and rerun python3 scripts/run_agent.py with real credentials.
+5. Run python3 scripts/render_submission.py and attach TxIDs plus repo links.
