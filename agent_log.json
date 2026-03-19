@@ -7,5 +7,575 @@
     "details": {
       "status": "ready_for_credentials"
     }
+  },
+  {
+    "timestamp": "2026-03-19T03:30:27+00:00",
+    "stage": "discover",
+    "actor": "agent_runtime",
+    "message": "Ranked local signals.",
+    "details": {
+      "signals": [
+        {
+          "name": "private_inputs",
+          "description": "Sensitive facts that must not leave the private rail.",
+          "score": 95
+        },
+        {
+          "name": "policy_envelope",
+          "description": "Allowlisted actions and maximum consequence bounds.",
+          "score": 90
+        },
+        {
+          "name": "public_consequences",
+          "description": "Redacted decisions and onchain digests.",
+          "score": 85
+        },
+        {
+          "name": "receipts",
+          "description": "Verification notes and consequence proofs.",
+          "score": 80
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:30:27+00:00",
+    "stage": "plan",
+    "actor": "agent_runtime",
+    "message": "Built bounded plan.",
+    "details": {
+      "plan_id": "0x7f79c56769b8eaaa332e15d18b20a4e2de431490a070b8e820d2c7100ea4975a"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:30:27+00:00",
+    "stage": "dry_run",
+    "actor": "agent_runtime",
+    "message": "Prepared partner previews.",
+    "details": {
+      "simulation_hash": "0x65fa95300fbf2f5376804a69e8de50a5ba228addec13f6abc206b27ad5c28772"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:30:27+00:00",
+    "stage": "execute",
+    "actor": "agent_runtime",
+    "message": "Skipped live execution.",
+    "details": {
+      "missing_env": [
+        "ENS_NAME",
+        "OCTANT_SIGNAL_URL",
+        "RPC_URL",
+        "SELF_PROTOCOL_API_KEY",
+        "SELF_VERIFICATION_URL",
+        "UNISWAP_API_KEY",
+        "UNISWAP_QUOTE_URL",
+        "VENICE_API_KEY",
+        "VENICE_CHAT_COMPLETIONS_URL",
+        "VENICE_MODEL"
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:30:27+00:00",
+    "stage": "verify",
+    "actor": "agent_runtime",
+    "message": "Wrote verification.",
+    "details": {
+      "status": "verified",
+      "project_name": "Shadow Treasury Desk",
+      "track": "Venice Private Agents",
+      "plan_id": "0x7f79c56769b8eaaa332e15d18b20a4e2de431490a070b8e820d2c7100ea4975a",
+      "simulation_hash": "0x65fa95300fbf2f5376804a69e8de50a5ba228addec13f6abc206b27ad5c28772",
+      "execution_status": "awaiting_credentials",
+      "tx_ids": [],
+      "created_at": "2026-03-19T03:30:27+00:00"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:30:27+00:00",
+    "stage": "discover",
+    "actor": "agent_runtime",
+    "message": "Ranked local signals.",
+    "details": {
+      "signals": [
+        {
+          "name": "private_inputs",
+          "description": "Sensitive facts that must not leave the private rail.",
+          "score": 95
+        },
+        {
+          "name": "policy_envelope",
+          "description": "Allowlisted actions and maximum consequence bounds.",
+          "score": 90
+        },
+        {
+          "name": "public_consequences",
+          "description": "Redacted decisions and onchain digests.",
+          "score": 85
+        },
+        {
+          "name": "receipts",
+          "description": "Verification notes and consequence proofs.",
+          "score": 80
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:30:27+00:00",
+    "stage": "plan",
+    "actor": "agent_runtime",
+    "message": "Built bounded plan.",
+    "details": {
+      "plan_id": "0x7f79c56769b8eaaa332e15d18b20a4e2de431490a070b8e820d2c7100ea4975a"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:30:27+00:00",
+    "stage": "dry_run",
+    "actor": "agent_runtime",
+    "message": "Prepared partner previews.",
+    "details": {
+      "simulation_hash": "0x65fa95300fbf2f5376804a69e8de50a5ba228addec13f6abc206b27ad5c28772"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:30:27+00:00",
+    "stage": "execute",
+    "actor": "agent_runtime",
+    "message": "Skipped live execution.",
+    "details": {
+      "missing_env": [
+        "ENS_NAME",
+        "OCTANT_SIGNAL_URL",
+        "RPC_URL",
+        "SELF_PROTOCOL_API_KEY",
+        "SELF_VERIFICATION_URL",
+        "UNISWAP_API_KEY",
+        "UNISWAP_QUOTE_URL",
+        "VENICE_API_KEY",
+        "VENICE_CHAT_COMPLETIONS_URL",
+        "VENICE_MODEL"
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:30:27+00:00",
+    "stage": "verify",
+    "actor": "agent_runtime",
+    "message": "Wrote verification.",
+    "details": {
+      "status": "verified",
+      "project_name": "Shadow Treasury Desk",
+      "track": "Venice Private Agents",
+      "plan_id": "0x7f79c56769b8eaaa332e15d18b20a4e2de431490a070b8e820d2c7100ea4975a",
+      "simulation_hash": "0x65fa95300fbf2f5376804a69e8de50a5ba228addec13f6abc206b27ad5c28772",
+      "execution_status": "awaiting_credentials",
+      "tx_ids": [],
+      "created_at": "2026-03-19T03:30:27+00:00"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:39:23.678178+00:00",
+    "stage": "security_review",
+    "actor": "audit_pass",
+    "message": "Completed the shared hardening and offline-artifact audit pass.",
+    "details": {
+      "status": "audited_ready_pending_live_credentials",
+      "primary_contract": "PrivateDecisionRegistry.sol"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:49:12+00:00",
+    "stage": "discover",
+    "actor": "agent_runtime",
+    "message": "Ranked local signals.",
+    "details": {
+      "signals": [
+        {
+          "name": "private_inputs",
+          "description": "Sensitive facts that must not leave the private rail.",
+          "score": 95
+        },
+        {
+          "name": "policy_envelope",
+          "description": "Allowlisted actions and maximum consequence bounds.",
+          "score": 90
+        },
+        {
+          "name": "public_consequences",
+          "description": "Redacted decisions and onchain digests.",
+          "score": 85
+        },
+        {
+          "name": "receipts",
+          "description": "Verification notes and consequence proofs.",
+          "score": 80
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:49:12+00:00",
+    "stage": "plan",
+    "actor": "agent_runtime",
+    "message": "Built bounded plan for every repo action.",
+    "details": {
+      "plan_id": "0xb43c9b55342133dac207e5ab45cdc0aba8e5726d2fd72c22fac7f50028910d60",
+      "action_count": 7
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:49:12+00:00",
+    "stage": "dry_run",
+    "actor": "agent_runtime",
+    "message": "Prepared partner previews.",
+    "details": {
+      "simulation_hash": "0xcac08e3d921610cdcfd491f8cd4b07df9aa6a9d470431427f01c0f377dfb3082"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:49:12+00:00",
+    "stage": "execute",
+    "actor": "agent_runtime",
+    "message": "Prepared offline artifacts and skipped network execution.",
+    "details": {
+      "missing_env": [
+        "OCTANT_SIGNAL_URL",
+        "SELF_PROTOCOL_API_KEY",
+        "SELF_VERIFICATION_URL",
+        "UNISWAP_API_KEY",
+        "UNISWAP_QUOTE_URL",
+        "VENICE_API_KEY",
+        "VENICE_CHAT_COMPLETIONS_URL",
+        "VENICE_MODEL"
+      ],
+      "artifact_count": 3
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:49:12+00:00",
+    "stage": "verify",
+    "actor": "agent_runtime",
+    "message": "Wrote verification.",
+    "details": {
+      "status": "verified",
+      "project_name": "Shadow Treasury Desk",
+      "track": "Venice Private Agents",
+      "plan_id": "0xb43c9b55342133dac207e5ab45cdc0aba8e5726d2fd72c22fac7f50028910d60",
+      "simulation_hash": "0xcac08e3d921610cdcfd491f8cd4b07df9aa6a9d470431427f01c0f377dfb3082",
+      "execution_status": "offline_prepared",
+      "tx_ids": [],
+      "artifact_paths": [
+        "artifacts/onchain_intents/lido_yield_route.json",
+        "artifacts/onchain_intents/ens_ens_publish.json",
+        "artifacts/onchain_intents/metamask_delegations_delegate_scope.json"
+      ],
+      "partner_statuses": {
+        "Venice": "awaiting_credentials",
+        "SelfProtocol": "awaiting_credentials",
+        "Lido": "prepared_contract_call",
+        "Uniswap": "awaiting_credentials",
+        "ENS": "prepared_contract_call",
+        "Octant": "awaiting_credentials",
+        "MetaMask Delegations": "prepared_contract_call"
+      },
+      "created_at": "2026-03-19T03:49:12+00:00"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:50:52+00:00",
+    "stage": "discover",
+    "actor": "agent_runtime",
+    "message": "Ranked local signals.",
+    "details": {
+      "signals": [
+        {
+          "name": "private_inputs",
+          "description": "Sensitive facts that must not leave the private rail.",
+          "score": 95
+        },
+        {
+          "name": "policy_envelope",
+          "description": "Allowlisted actions and maximum consequence bounds.",
+          "score": 90
+        },
+        {
+          "name": "public_consequences",
+          "description": "Redacted decisions and onchain digests.",
+          "score": 85
+        },
+        {
+          "name": "receipts",
+          "description": "Verification notes and consequence proofs.",
+          "score": 80
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:50:52+00:00",
+    "stage": "plan",
+    "actor": "agent_runtime",
+    "message": "Built bounded plan for every repo action.",
+    "details": {
+      "plan_id": "0x5e596c92ba01ff5c7b585803cf275265f808f736b0fdc8df535301c1f064d164",
+      "action_count": 7
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:50:52+00:00",
+    "stage": "dry_run",
+    "actor": "agent_runtime",
+    "message": "Prepared partner previews.",
+    "details": {
+      "simulation_hash": "0x19ea23178951859e708764691202fb8b01bc4be7e331aa5bae228245c6b995f5"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:50:52+00:00",
+    "stage": "execute",
+    "actor": "agent_runtime",
+    "message": "Prepared offline artifacts and skipped network execution.",
+    "details": {
+      "missing_env": [
+        "OCTANT_SIGNAL_URL",
+        "SELF_PROTOCOL_API_KEY",
+        "SELF_VERIFICATION_URL",
+        "UNISWAP_API_KEY",
+        "UNISWAP_QUOTE_URL",
+        "VENICE_API_KEY",
+        "VENICE_CHAT_COMPLETIONS_URL",
+        "VENICE_MODEL"
+      ],
+      "artifact_count": 3
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:50:52+00:00",
+    "stage": "verify",
+    "actor": "agent_runtime",
+    "message": "Wrote verification.",
+    "details": {
+      "status": "verified",
+      "project_name": "Shadow Treasury Desk",
+      "track": "Venice Private Agents",
+      "plan_id": "0x5e596c92ba01ff5c7b585803cf275265f808f736b0fdc8df535301c1f064d164",
+      "simulation_hash": "0x19ea23178951859e708764691202fb8b01bc4be7e331aa5bae228245c6b995f5",
+      "execution_status": "offline_prepared",
+      "tx_ids": [],
+      "artifact_paths": [
+        "artifacts/onchain_intents/lido_yield_route.json",
+        "artifacts/onchain_intents/ens_ens_publish.json",
+        "artifacts/onchain_intents/metamask_delegations_delegate_scope.json"
+      ],
+      "partner_statuses": {
+        "Venice": "awaiting_credentials",
+        "SelfProtocol": "awaiting_credentials",
+        "Lido": "prepared_contract_call",
+        "Uniswap": "awaiting_credentials",
+        "ENS": "prepared_contract_call",
+        "Octant": "awaiting_credentials",
+        "MetaMask Delegations": "prepared_contract_call"
+      },
+      "created_at": "2026-03-19T03:50:52+00:00"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:51:49+00:00",
+    "stage": "discover",
+    "actor": "agent_runtime",
+    "message": "Ranked local signals.",
+    "details": {
+      "signals": [
+        {
+          "name": "private_inputs",
+          "description": "Sensitive facts that must not leave the private rail.",
+          "score": 95
+        },
+        {
+          "name": "policy_envelope",
+          "description": "Allowlisted actions and maximum consequence bounds.",
+          "score": 90
+        },
+        {
+          "name": "public_consequences",
+          "description": "Redacted decisions and onchain digests.",
+          "score": 85
+        },
+        {
+          "name": "receipts",
+          "description": "Verification notes and consequence proofs.",
+          "score": 80
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:51:49+00:00",
+    "stage": "plan",
+    "actor": "agent_runtime",
+    "message": "Built bounded plan for every repo action.",
+    "details": {
+      "plan_id": "0xea86aca1a0a1753c07e7e70794cd4c3178bf52cab48807b98668cef6a8bfd378",
+      "action_count": 7
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:51:49+00:00",
+    "stage": "dry_run",
+    "actor": "agent_runtime",
+    "message": "Prepared partner previews.",
+    "details": {
+      "simulation_hash": "0xd70b73b23c9d0ebd968db05a141f992379928d0553db845c4adc8b104503909e"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:51:49+00:00",
+    "stage": "execute",
+    "actor": "agent_runtime",
+    "message": "Prepared offline artifacts and skipped network execution.",
+    "details": {
+      "missing_env": [
+        "OCTANT_SIGNAL_URL",
+        "SELF_PROTOCOL_API_KEY",
+        "SELF_VERIFICATION_URL",
+        "UNISWAP_API_KEY",
+        "UNISWAP_QUOTE_URL",
+        "VENICE_API_KEY",
+        "VENICE_CHAT_COMPLETIONS_URL",
+        "VENICE_MODEL"
+      ],
+      "artifact_count": 3
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:51:49+00:00",
+    "stage": "verify",
+    "actor": "agent_runtime",
+    "message": "Wrote verification.",
+    "details": {
+      "status": "verified",
+      "project_name": "Shadow Treasury Desk",
+      "track": "Venice Private Agents",
+      "plan_id": "0xea86aca1a0a1753c07e7e70794cd4c3178bf52cab48807b98668cef6a8bfd378",
+      "simulation_hash": "0xd70b73b23c9d0ebd968db05a141f992379928d0553db845c4adc8b104503909e",
+      "execution_status": "offline_prepared",
+      "tx_ids": [],
+      "artifact_paths": [
+        "artifacts/onchain_intents/lido_yield_route.json",
+        "artifacts/onchain_intents/ens_ens_publish.json",
+        "artifacts/onchain_intents/metamask_delegations_delegate_scope.json"
+      ],
+      "partner_statuses": {
+        "Venice": "awaiting_credentials",
+        "SelfProtocol": "awaiting_credentials",
+        "Lido": "prepared_contract_call",
+        "Uniswap": "awaiting_credentials",
+        "ENS": "prepared_contract_call",
+        "Octant": "awaiting_credentials",
+        "MetaMask Delegations": "prepared_contract_call"
+      },
+      "created_at": "2026-03-19T03:51:49+00:00"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:52:21+00:00",
+    "stage": "discover",
+    "actor": "agent_runtime",
+    "message": "Ranked local signals.",
+    "details": {
+      "signals": [
+        {
+          "name": "private_inputs",
+          "description": "Sensitive facts that must not leave the private rail.",
+          "score": 95
+        },
+        {
+          "name": "policy_envelope",
+          "description": "Allowlisted actions and maximum consequence bounds.",
+          "score": 90
+        },
+        {
+          "name": "public_consequences",
+          "description": "Redacted decisions and onchain digests.",
+          "score": 85
+        },
+        {
+          "name": "receipts",
+          "description": "Verification notes and consequence proofs.",
+          "score": 80
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:52:21+00:00",
+    "stage": "plan",
+    "actor": "agent_runtime",
+    "message": "Built bounded plan for every repo action.",
+    "details": {
+      "plan_id": "0x5f3973530e4c38ed4577915d4d16466d2aecc8b73985323d7cd18bbbd8c434ba",
+      "action_count": 7
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:52:21+00:00",
+    "stage": "dry_run",
+    "actor": "agent_runtime",
+    "message": "Prepared partner previews.",
+    "details": {
+      "simulation_hash": "0xfdd1cac854a06cb1c13acbf22af9d243ea53e5d69577f7e3acac81e5c9893dc1"
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:52:21+00:00",
+    "stage": "execute",
+    "actor": "agent_runtime",
+    "message": "Prepared offline artifacts and skipped network execution.",
+    "details": {
+      "missing_env": [
+        "OCTANT_SIGNAL_URL",
+        "SELF_PROTOCOL_API_KEY",
+        "SELF_VERIFICATION_URL",
+        "UNISWAP_API_KEY",
+        "UNISWAP_QUOTE_URL",
+        "VENICE_API_KEY",
+        "VENICE_CHAT_COMPLETIONS_URL",
+        "VENICE_MODEL"
+      ],
+      "artifact_count": 3
+    }
+  },
+  {
+    "timestamp": "2026-03-19T03:52:21+00:00",
+    "stage": "verify",
+    "actor": "agent_runtime",
+    "message": "Wrote verification.",
+    "details": {
+      "status": "verified",
+      "project_name": "Shadow Treasury Desk",
+      "track": "Venice Private Agents",
+      "plan_id": "0x5f3973530e4c38ed4577915d4d16466d2aecc8b73985323d7cd18bbbd8c434ba",
+      "simulation_hash": "0xfdd1cac854a06cb1c13acbf22af9d243ea53e5d69577f7e3acac81e5c9893dc1",
+      "execution_status": "offline_prepared",
+      "tx_ids": [],
+      "artifact_paths": [
+        "artifacts/onchain_intents/lido_yield_route.json",
+        "artifacts/onchain_intents/ens_ens_publish.json",
+        "artifacts/onchain_intents/metamask_delegations_delegate_scope.json"
+      ],
+      "partner_statuses": {
+        "Venice": "awaiting_credentials",
+        "SelfProtocol": "awaiting_credentials",
+        "Lido": "prepared_contract_call",
+        "Uniswap": "awaiting_credentials",
+        "ENS": "prepared_contract_call",
+        "Octant": "awaiting_credentials",
+        "MetaMask Delegations": "prepared_contract_call"
+      },
+      "created_at": "2026-03-19T03:52:21+00:00"
+    }
   }
 ]
