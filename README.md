@@ -5,7 +5,7 @@
 - **Category:** privacy
 - **Primary contract:** `PrivateDecisionRegistry`
 - **Primary module:** `venice_private_desk`
-- **Submission status:** implementation ready, waiting for credentials and TxIDs.
+- **Submission status:** audited and offline-demo ready; optional live partner credentials unlock network execution.
 
 ## What this repo does
 
@@ -67,6 +67,33 @@ flowchart TD
 3. Persist a dry-run artifact before any live execution.
 4. Enforce onchain policy through the guarded contract wrapper.
 5. Verify outputs, update receipts, and render submission material.
+
+## Current readiness
+
+- **Latest verification:** `verified` at `2026-03-19T03:52:21+00:00`
+- **Execution mode:** `offline_prepared`
+- **Offline-prepared partners:** Lido (prepared_contract_call), ENS (prepared_contract_call), MetaMask Delegations (prepared_contract_call)
+- **Live credential blockers:** Venice, SelfProtocol, Uniswap, Octant
+- **Audit docs:** `docs/audit.md`, `docs/live_readiness.md`
+
+## Most sensitive actions
+
+- `venice_private_analysis` (Venice, high)
+- `selfprotocol_zk_verify` (SelfProtocol, high)
+- `metamask_delegations_delegate_scope` (MetaMask Delegations, high)
+
+## Live blocker details
+
+- **Venice** — VENICE_API_KEY, VENICE_CHAT_COMPLETIONS_URL, VENICE_MODEL — https://docs.venice.ai/
+- **SelfProtocol** — SELF_PROTOCOL_API_KEY, SELF_VERIFICATION_URL — https://docs.self.xyz/
+- **Uniswap** — UNISWAP_API_KEY, UNISWAP_QUOTE_URL — https://developers.uniswap.org/
+- **Octant** — OCTANT_SIGNAL_URL — https://octant.app/
+
+## Latest evidence artifacts
+
+- `artifacts/onchain_intents/lido_yield_route.json`
+- `artifacts/onchain_intents/ens_ens_publish.json`
+- `artifacts/onchain_intents/metamask_delegations_delegate_scope.json`
 
 ## Security controls
 
